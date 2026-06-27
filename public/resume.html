@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Homer Divinagracia — Resume</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      font-size: 13px;
+      color: #1a1a1a;
+      background: #f5f5f5;
+      line-height: 1.5;
+    }
+
+    .page {
+      max-width: 780px;
+      margin: 2rem auto;
+      background: #fff;
+      padding: 2.5rem 3rem;
+      box-shadow: 0 2px 16px rgba(0,0,0,.1);
+    }
+
+    /* Header */
+    .header { border-bottom: 2px solid #00c9a7; padding-bottom: 1rem; margin-bottom: 1.25rem; }
+    .header h1 { font-size: 1.75rem; font-weight: 700; color: #0d1117; }
+    .header .title { font-size: 0.95rem; color: #00c9a7; font-weight: 600; margin-top: .25rem; }
+    .header .contacts { display: flex; flex-wrap: wrap; gap: .75rem 1.5rem; margin-top: .75rem; font-size: .8rem; color: #555; }
+    .header .contacts a { color: #555; text-decoration: none; }
+    .header .contacts a:hover { color: #00c9a7; }
+
+    /* Sections */
+    .section { margin-bottom: 1.25rem; }
+    .section-title {
+      font-size: .7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      color: #00c9a7;
+      border-bottom: 1px solid #e5e7eb;
+      padding-bottom: .35rem;
+      margin-bottom: .85rem;
+    }
+
+    /* Summary */
+    .summary { color: #444; }
+
+    /* Experience & Education */
+    .entry { margin-bottom: .9rem; }
+    .entry-header { display: flex; justify-content: space-between; align-items: flex-start; }
+    .entry-role { font-weight: 600; color: #0d1117; font-size: .85rem; }
+    .entry-period { font-size: .75rem; color: #888; white-space: nowrap; }
+    .entry-org { font-size: .8rem; color: #0096ff; font-weight: 500; }
+    .entry-location { font-size: .75rem; color: #888; }
+    .entry ul { margin-top: .5rem; padding-left: 1rem; }
+    .entry ul li { margin-bottom: .3rem; color: #444; }
+    .entry ul li::marker { color: #00c9a7; }
+
+    /* Skills grid */
+    .skills-grid { display: flex; flex-wrap: wrap; gap: .4rem; }
+    .skill-tag {
+      font-size: .75rem;
+      padding: .2rem .65rem;
+      border-radius: 20px;
+      background: #f0fdf9;
+      color: #007a65;
+      border: 1px solid #b2f0e3;
+      font-weight: 500;
+    }
+
+    /* Projects */
+    .project { margin-bottom: .85rem; }
+    .project-name { font-weight: 600; color: #0d1117; font-size: .85rem; }
+    .project-meta { font-size: .75rem; color: #0096ff; margin-bottom: .25rem; }
+    .project-desc { color: #444; }
+
+    /* Print */
+    @media print {
+      body { background: #fff; font-size: 12px; }
+      .page { margin: 0; padding: 1.5rem 2rem; box-shadow: none; }
+      .no-print { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Print button (hidden on print) -->
+  <div class="no-print" style="text-align:center;padding:1rem;background:#0d1117;">
+    <button onclick="window.print()"
+      style="background:#00c9a7;color:#0d1117;border:none;padding:.6rem 1.5rem;border-radius:6px;font-weight:600;cursor:pointer;font-size:.875rem;">
+      ⬇ Download / Print as PDF
+    </button>
+  </div>
+
+  <div class="page">
+
+    <!-- HEADER -->
+    <div class="header">
+      <h1>Homer Divinagracia</h1>
+      <div class="title">Jr. Software Developer / Full Stack Developer</div>
+      <div class="contacts">
+        <a href="mailto:homerdivinagracia@gmail.com">✉ homerdivinagracia@gmail.com</a>
+        <a href="https://github.com/HomerDivinagracia" target="_blank">⌥ github.com/HomerDivinagracia</a>
+        <a href="https://www.linkedin.com/in/homer-divinagracia-83851b316" target="_blank">in linkedin.com/in/homer-divinagracia</a>
+      </div>
+    </div>
+
+    <!-- SUMMARY -->
+    <div class="section">
+      <div class="section-title">Summary</div>
+      <p class="summary">
+        Junior Full Stack Developer with hands-on experience building production-grade web applications
+        for government agencies including the National Housing Authority (NHA) and multiple Local Government Units (LGUs).
+        Proficient in PHP / Laravel on the backend and Vue.js / React on the frontend. Experienced with microservice
+        architecture, OAuth2 SSO, REST API design, and multiple database systems (MySQL, PostgreSQL).
+        Passionate about agentic engineering and building smarter, more autonomous systems.
+      </p>
+    </div>
+
+    <!-- EXPERIENCE -->
+    <div class="section">
+      <div class="section-title">Experience</div>
+      <div class="entry">
+        <div class="entry-header">
+          <div>
+            <div class="entry-role">Jr. Software Developer / Full Stack Developer</div>
+            <div class="entry-org">Green Apple Technologies &amp; System Inc.</div>
+            <div class="entry-location">Makati City</div>
+          </div>
+          <div class="entry-period">Aug 2024 — Present</div>
+        </div>
+        <ul>
+          <li>Built 7+ production web applications for government agencies (NHA, LGUs) across the Philippines.</li>
+          <li>Developed a 4-service microservice ecosystem with OAuth2 SSO (Laravel Passport), BCS frontend (Inertia.js), versioned REST API (Swagger + PostgreSQL), and a public payment portal (Vue 3 + Vuetify 3).</li>
+          <li>Integrated payment gateways: Dragonpay, AltPayNet, and Billeroo.</li>
+          <li>Delivered HRIS, Payroll, E-BPLS, Property Management, Resident ID, and Demand Notice systems.</li>
+          <li>Tech stack: Laravel 8/12, Vue 2/3, React 19, Inertia.js, MySQL, PostgreSQL, Bootstrap 5, Tailwind CSS.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- EDUCATION -->
+    <div class="section">
+      <div class="section-title">Education</div>
+      <div class="entry">
+        <div class="entry-header">
+          <div>
+            <div class="entry-role">Bachelor of Science in Information Technology</div>
+            <div class="entry-org">Occidental Mindoro State University</div>
+          </div>
+          <div class="entry-period">2018 — 2022</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SKILLS -->
+    <div class="section">
+      <div class="section-title">Technical Skills</div>
+      <div class="skills-grid">
+        <span class="skill-tag">PHP</span>
+        <span class="skill-tag">Laravel 8 / 12</span>
+        <span class="skill-tag">JavaScript</span>
+        <span class="skill-tag">Vue 2 / 3</span>
+        <span class="skill-tag">React 19</span>
+        <span class="skill-tag">Inertia.js</span>
+        <span class="skill-tag">MySQL</span>
+        <span class="skill-tag">PostgreSQL</span>
+        <span class="skill-tag">Bootstrap 5</span>
+        <span class="skill-tag">Tailwind CSS</span>
+        <span class="skill-tag">OAuth2 / SSO</span>
+        <span class="skill-tag">Laravel Passport</span>
+        <span class="skill-tag">Laravel Sanctum</span>
+        <span class="skill-tag">REST API Design</span>
+        <span class="skill-tag">Swagger / OpenAPI</span>
+        <span class="skill-tag">Vite</span>
+        <span class="skill-tag">Git</span>
+      </div>
+    </div>
+
+    <!-- PROJECTS -->
+    <div class="section">
+      <div class="section-title">Key Projects</div>
+
+      <div class="project">
+        <div class="project-name">LIBIS — NHA Billing &amp; Collection System</div>
+        <div class="project-meta">Laravel 12 · React 19 · Vue 3 · Inertia.js · OAuth2 · PostgreSQL · Swagger · Vuetify 3</div>
+        <div class="project-desc">4-service microservice ecosystem for NHA — central OAuth2 SSO portal, BCS frontend, versioned REST API with Swagger docs, and public payment portal supporting Dragonpay, AltPayNet, and Billeroo.</div>
+      </div>
+
+      <div class="project">
+        <div class="project-name">NHA Billing &amp; Collection System (nha-bcs-v2)</div>
+        <div class="project-meta">Laravel 8 · Vue 2 · MySQL · Bootstrap 5</div>
+        <div class="project-desc">Full financial management system for NHA Region 3 — official receipts, accountable forms, field collections, and analytics for government housing loans.</div>
+      </div>
+
+      <div class="project">
+        <div class="project-name">Human Resource Information System</div>
+        <div class="project-meta">Laravel 8 · Vue 2 · MySQL · Bootstrap 5</div>
+        <div class="project-desc">Comprehensive HRIS managing employees, departments, positions, contracts, manpower requests, and work assignments.</div>
+      </div>
+
+      <div class="project">
+        <div class="project-name">E-Business Permit &amp; Licensing System (Bais City)</div>
+        <div class="project-meta">Laravel 8 · Vue 2 · MySQL · Bootstrap 5</div>
+        <div class="project-desc">LGU-facing system for new business applicants, BPLO processing, permit endorsement workflows, and email verification.</div>
+      </div>
+
+      <div class="project">
+        <div class="project-name">Pagadian City Payroll System</div>
+        <div class="project-meta">Laravel 8 · Vue 2 · MySQL · Bootstrap 5</div>
+        <div class="project-desc">Payroll management system covering employee records, departments, job titles, and automated payroll register generation.</div>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>

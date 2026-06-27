@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <radialGradient id="bgGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%"   stop-color="#1a2535"/>
+      <stop offset="100%" stop-color="#0d1117"/>
+    </radialGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#00c9a7"/>
+      <stop offset="100%" stop-color="#0096ff"/>
+    </linearGradient>
+    <linearGradient id="skinGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%"   stop-color="#f5c5a3"/>
+      <stop offset="100%" stop-color="#e8a882"/>
+    </linearGradient>
+    <clipPath id="circle">
+      <circle cx="200" cy="200" r="196"/>
+    </clipPath>
+  </defs>
+
+  <!-- Background circle -->
+  <circle cx="200" cy="200" r="200" fill="url(#bgGrad)"/>
+
+  <!-- Subtle dot grid -->
+  <g opacity="0.06" clip-path="url(#circle)">
+    <pattern id="dots" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#c9d1d9"/>
+    </pattern>
+    <rect width="400" height="400" fill="url(#dots)"/>
+  </g>
+
+  <!-- Glow behind figure -->
+  <ellipse cx="200" cy="280" rx="120" ry="60" fill="#00c9a7" opacity="0.08"/>
+
+  <!-- Shirt / body -->
+  <ellipse cx="200" cy="370" rx="110" ry="70" fill="#161b22"/>
+  <rect x="90" y="310" width="220" height="90" rx="30" fill="#161b22"/>
+  <!-- Collar accent -->
+  <path d="M170 310 L200 340 L230 310" fill="none" stroke="url(#accentGrad)" stroke-width="2.5" stroke-linejoin="round"/>
+
+  <!-- Neck -->
+  <rect x="183" y="268" width="34" height="48" rx="10" fill="url(#skinGrad)"/>
+
+  <!-- Head -->
+  <ellipse cx="200" cy="230" rx="72" ry="80" fill="url(#skinGrad)"/>
+
+  <!-- Hair -->
+  <ellipse cx="200" cy="158" rx="72" ry="32" fill="#1a0a00"/>
+  <rect x="128" y="158" width="14" height="48" rx="7" fill="#1a0a00"/>
+  <rect x="258" y="158" width="14" height="44" rx="7" fill="#1a0a00"/>
+  <ellipse cx="200" cy="153" rx="68" ry="24" fill="#2a1000"/>
+
+  <!-- Eyes -->
+  <ellipse cx="176" cy="225" rx="11" ry="13" fill="#fff"/>
+  <ellipse cx="224" cy="225" rx="11" ry="13" fill="#fff"/>
+  <circle cx="178" cy="227" r="7" fill="#3a2000"/>
+  <circle cx="226" cy="227" r="7" fill="#3a2000"/>
+  <circle cx="180" cy="224" r="2.5" fill="#fff"/>
+  <circle cx="228" cy="224" r="2.5" fill="#fff"/>
+
+  <!-- Eyebrows -->
+  <path d="M163 208 Q176 202 190 207" fill="none" stroke="#2a1000" stroke-width="3.5" stroke-linecap="round"/>
+  <path d="M210 207 Q224 202 237 208" fill="none" stroke="#2a1000" stroke-width="3.5" stroke-linecap="round"/>
+
+  <!-- Nose -->
+  <path d="M196 235 Q193 252 188 258 Q200 263 212 258 Q207 252 204 235" fill="#d4956a" opacity="0.5"/>
+
+  <!-- Smile -->
+  <path d="M182 272 Q200 284 218 272" fill="none" stroke="#c07850" stroke-width="2.5" stroke-linecap="round"/>
+
+  <!-- Ears -->
+  <ellipse cx="129" cy="232" rx="11" ry="16" fill="url(#skinGrad)"/>
+  <ellipse cx="271" cy="232" rx="11" ry="16" fill="url(#skinGrad)"/>
+
+  <!-- Tech accent: floating brackets -->
+  <text x="34" y="180" font-family="monospace" font-size="28" fill="url(#accentGrad)" opacity="0.5">&lt;/&gt;</text>
+  <text x="318" y="120" font-family="monospace" font-size="18" fill="url(#accentGrad)" opacity="0.35">{}</text>
+
+  <!-- Border ring with gradient -->
+  <circle cx="200" cy="200" r="196" fill="none" stroke="url(#accentGrad)" stroke-width="4" opacity="0.7"/>
+</svg>
