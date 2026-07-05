@@ -5,95 +5,215 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Homer Divinagracia — Resume</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
       font-family: 'Inter', sans-serif;
       font-size: 13px;
-      color: #1a1a1a;
-      background: #f5f5f5;
-      line-height: 1.5;
+      color: #1e293b;
+      background: #f1f5f9;
+      line-height: 1.55;
     }
 
     .page {
-      max-width: 780px;
+      max-width: 800px;
       margin: 2rem auto;
       background: #fff;
-      padding: 2.5rem 3rem;
-      box-shadow: 0 2px 16px rgba(0,0,0,.1);
+      padding: 2.75rem 3rem;
+      box-shadow: 0 4px 24px rgba(0,0,0,.08);
+      border-radius: 4px;
     }
 
-    /* Header */
-    .header { border-bottom: 2px solid #00c9a7; padding-bottom: 1rem; margin-bottom: 1.25rem; }
-    .header h1 { font-size: 1.75rem; font-weight: 700; color: #0d1117; }
-    .header .title { font-size: 0.95rem; color: #00c9a7; font-weight: 600; margin-top: .25rem; }
-    .header .contacts { display: flex; flex-wrap: wrap; gap: .75rem 1.5rem; margin-top: .75rem; font-size: .8rem; color: #555; }
-    .header .contacts a { color: #555; text-decoration: none; }
-    .header .contacts a:hover { color: #00c9a7; }
+    /* ── HEADER ── */
+    .header {
+      position: relative;
+      padding-bottom: 1.5rem;
+      margin-bottom: 1.75rem;
+      border-bottom: 1px solid #e2e8f0;
+    }
+    .header::after {
+      content: '';
+      position: absolute;
+      bottom: -1px; left: 0;
+      width: 56px; height: 2px;
+      background: linear-gradient(90deg, #00c9a7, #0096ff);
+      border-radius: 2px;
+    }
+    .header h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      color: #0d1117;
+      letter-spacing: -0.03em;
+      line-height: 1;
+    }
+    .header .title {
+      font-size: .875rem;
+      color: #00c9a7;
+      font-weight: 600;
+      margin-top: .35rem;
+      letter-spacing: .02em;
+    }
+    .contacts {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .45rem 1.6rem;
+      margin-top: .9rem;
+    }
+    .contacts a {
+      display: flex;
+      align-items: center;
+      gap: .38rem;
+      font-size: .775rem;
+      color: #475569;
+      text-decoration: none;
+    }
+    .contacts a:hover { color: #00c9a7; }
+    .contacts svg { width: 12px; height: 12px; flex-shrink: 0; }
 
-    /* Sections */
-    .section { margin-bottom: 1.25rem; }
+    /* ── SECTION ── */
+    .section { margin-bottom: 1.5rem; }
     .section-title {
-      font-size: .7rem;
+      display: flex;
+      align-items: center;
+      gap: .55rem;
+      font-size: .67rem;
       font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: .12em;
-      color: #00c9a7;
-      border-bottom: 1px solid #e5e7eb;
-      padding-bottom: .35rem;
-      margin-bottom: .85rem;
+      letter-spacing: .14em;
+      color: #64748b;
+      margin-bottom: 1rem;
+    }
+    .section-title::before {
+      content: '';
+      display: block;
+      width: 3px; height: 13px;
+      background: linear-gradient(180deg, #00c9a7, #0096ff);
+      border-radius: 2px;
+      flex-shrink: 0;
+    }
+    .section-title::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: #e2e8f0;
     }
 
-    /* Summary */
-    .summary { color: #444; }
+    /* ── SUMMARY ── */
+    .summary { color: #475569; line-height: 1.65; }
+    .summary strong { color: #1e293b; font-weight: 600; }
 
-    /* Experience & Education */
-    .entry { margin-bottom: .9rem; }
-    .entry-header { display: flex; justify-content: space-between; align-items: flex-start; }
-    .entry-role { font-weight: 600; color: #0d1117; font-size: .85rem; }
-    .entry-period { font-size: .75rem; color: #888; white-space: nowrap; }
-    .entry-org { font-size: .8rem; color: #0096ff; font-weight: 500; }
-    .entry-location { font-size: .75rem; color: #888; }
-    .entry ul { margin-top: .5rem; padding-left: 1rem; }
-    .entry ul li { margin-bottom: .3rem; color: #444; }
-    .entry ul li::marker { color: #00c9a7; }
+    /* ── EXPERIENCE / EDUCATION ── */
+    .entry { margin-bottom: 1rem; }
+    .entry:last-child { margin-bottom: 0; }
+    .entry-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: .2rem;
+    }
+    .entry-role { font-weight: 700; color: #0d1117; font-size: .875rem; }
+    .entry-period {
+      font-size: .7rem;
+      color: #fff;
+      background: linear-gradient(135deg, #00c9a7, #0096ff);
+      padding: .18rem .6rem;
+      border-radius: 20px;
+      white-space: nowrap;
+      flex-shrink: 0;
+      font-weight: 600;
+    }
+    .entry-sub {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      margin-bottom: .5rem;
+    }
+    .entry-org { font-size: .8rem; color: #0096ff; font-weight: 600; }
+    .entry-location { font-size: .75rem; color: #94a3b8; }
+    .entry-location::before { content: ' · '; }
 
-    /* Skills grid */
-    .skills-grid { display: flex; flex-wrap: wrap; gap: .4rem; }
+    .entry ul { list-style: none; padding: 0; }
+    .entry ul li {
+      position: relative;
+      padding-left: 1.1rem;
+      margin-bottom: .28rem;
+      color: #475569;
+      line-height: 1.55;
+    }
+    .entry ul li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: #00c9a7;
+      font-size: .78em;
+      top: .08em;
+    }
+
+    /* ── SKILLS ── */
+    .skills-table { display: flex; flex-direction: column; gap: .5rem; }
+    .skill-row { display: flex; align-items: flex-start; gap: .8rem; }
+    .skill-category {
+      font-size: .68rem;
+      font-weight: 700;
+      color: #94a3b8;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      min-width: 82px;
+      padding-top: .22rem;
+      flex-shrink: 0;
+    }
+    .skill-tags { display: flex; flex-wrap: wrap; gap: .28rem; }
     .skill-tag {
-      font-size: .75rem;
-      padding: .2rem .65rem;
+      font-size: .72rem;
+      padding: .18rem .62rem;
       border-radius: 20px;
       background: #f0fdf9;
-      color: #007a65;
-      border: 1px solid #b2f0e3;
+      color: #065f46;
+      border: 1px solid #a7f3d0;
       font-weight: 500;
     }
 
-    /* Projects */
-    .project { margin-bottom: .85rem; }
-    .project-name { font-weight: 600; color: #0d1117; font-size: .85rem; }
-    .project-meta { font-size: .75rem; color: #0096ff; margin-bottom: .25rem; }
-    .project-desc { color: #444; }
+    /* ── PROJECTS ── */
+    .project {
+      padding-left: .85rem;
+      margin-bottom: .8rem;
+      border-left: 2px solid #e2e8f0;
+    }
+    .project:last-child { margin-bottom: 0; }
+    .project:hover { border-left-color: #00c9a7; }
+    .project-header {
+      display: flex;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: .3rem .55rem;
+      margin-bottom: .15rem;
+    }
+    .project-name { font-weight: 700; color: #0d1117; font-size: .845rem; }
+    .project-meta { font-size: .7rem; color: #0096ff; font-weight: 500; }
+    .project-desc { color: #475569; line-height: 1.55; }
 
-    /* Print */
+    /* ── PRINT ── */
     @media print {
-      body { background: #fff; font-size: 12px; }
-      .page { margin: 0; padding: 1.5rem 2rem; box-shadow: none; }
-      .no-print { display: none; }
+      @page { margin: 1.4cm 1.8cm; size: A4; }
+      body { background: #fff; font-size: 11.5px; }
+      .page { margin: 0; padding: 0; box-shadow: none; border-radius: 0; max-width: 100%; }
+      .no-print { display: none !important; }
+      .project:hover { border-left-color: #e2e8f0; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Print button (hidden on print) -->
-  <div class="no-print" style="text-align:center;padding:1rem;background:#0d1117;">
+  <!-- Print toolbar -->
+  <div class="no-print" style="display:flex;align-items:center;justify-content:center;gap:.8rem;padding:.9rem 1rem;background:#0d1117;">
     <button onclick="window.print()"
-      style="background:#00c9a7;color:#0d1117;border:none;padding:.6rem 1.5rem;border-radius:6px;font-weight:600;cursor:pointer;font-size:.875rem;">
+      style="background:#00c9a7;color:#0d1117;border:none;padding:.55rem 1.4rem;border-radius:6px;font-weight:700;cursor:pointer;font-size:.8rem;font-family:'Inter',sans-serif;letter-spacing:.02em;">
       ⬇ Download / Print as PDF
     </button>
+    <span style="color:#475569;font-size:.72rem;font-family:'Inter',sans-serif;">Set page margins to <em>None</em> in the print dialog for best output</span>
   </div>
 
   <div class="page">
@@ -101,11 +221,24 @@
     <!-- HEADER -->
     <div class="header">
       <h1>Homer Divinagracia</h1>
-      <div class="title">Jr. Software Developer / Full Stack Developer</div>
+      <div class="title">Jr. Full Stack Developer &nbsp;·&nbsp; Aspiring Agentic Engineer</div>
       <div class="contacts">
-        <a href="mailto:homerdivinagracia@gmail.com">✉ homerdivinagracia@gmail.com</a>
-        <a href="https://github.com/HomerDivinagracia" target="_blank">⌥ github.com/HomerDivinagracia</a>
-        <a href="https://www.linkedin.com/in/homer-divinagracia-83851b316" target="_blank">in linkedin.com/in/homer-divinagracia</a>
+        <a href="mailto:homerdivinagracia@gmail.com">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
+          homerdivinagracia@gmail.com
+        </a>
+        <a href="https://github.com/HomerDivinagracia" target="_blank">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0 1 12 6.844a9.59 9.59 0 0 1 2.504.337c1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.02 10.02 0 0 0 22 12.017C22 6.484 17.522 2 12 2z"/></svg>
+          github.com/HomerDivinagracia
+        </a>
+        <a href="https://www.linkedin.com/in/homer-divinagracia-83851b316" target="_blank">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          linkedin.com/in/homer-divinagracia
+        </a>
+        <a href="https://portfolio-five-tan-40.vercel.app/" target="_blank">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          portfolio-five-tan-40.vercel.app
+        </a>
       </div>
     </div>
 
@@ -113,10 +246,10 @@
     <div class="section">
       <div class="section-title">Summary</div>
       <p class="summary">
-        Junior Full Stack Developer with hands-on experience building production-grade web applications
-        for government agencies including the National Housing Authority (NHA) and multiple Local Government Units (LGUs).
-        Proficient in PHP / Laravel on the backend and Vue.js / React on the frontend. Experienced with microservice
-        architecture, OAuth2 SSO, REST API design, and multiple database systems (MySQL, PostgreSQL).
+        Junior Full Stack Developer with hands-on experience delivering production-grade web applications
+        for Philippine government agencies — including the National Housing Authority (NHA) and multiple LGUs.
+        Proficient in <strong>PHP / Laravel</strong> on the backend and <strong>Vue.js / React</strong> on the frontend.
+        Experienced with microservice architecture, OAuth2 SSO, REST API design, and MySQL / PostgreSQL.
         Passionate about agentic engineering and building smarter, more autonomous systems.
       </p>
     </div>
@@ -126,19 +259,18 @@
       <div class="section-title">Experience</div>
       <div class="entry">
         <div class="entry-header">
-          <div>
-            <div class="entry-role">Jr. Software Developer / Full Stack Developer</div>
-            <div class="entry-org">Green Apple Technologies &amp; System Inc.</div>
-            <div class="entry-location">Makati City</div>
-          </div>
+          <div class="entry-role">Jr. Software Developer / Full Stack Developer</div>
           <div class="entry-period">Aug 2024 — Present</div>
+        </div>
+        <div class="entry-sub">
+          <span class="entry-org">Green Apple Technologies &amp; System Inc.</span>
+          <span class="entry-location">Makati City</span>
         </div>
         <ul>
           <li>Built 7+ production web applications for government agencies (NHA, LGUs) across the Philippines.</li>
-          <li>Developed a 4-service microservice ecosystem with OAuth2 SSO (Laravel Passport), BCS frontend (Inertia.js), versioned REST API (Swagger + PostgreSQL), and a public payment portal (Vue 3 + Vuetify 3).</li>
-          <li>Integrated payment gateways: Dragonpay, AltPayNet, and Billeroo.</li>
-          <li>Delivered HRIS, Payroll, E-BPLS, Property Management, Resident ID, and Demand Notice systems.</li>
-          <li>Tech stack: Laravel 8/12, Vue 2/3, React 19, Inertia.js, MySQL, PostgreSQL, Bootstrap 5, Tailwind CSS.</li>
+          <li>Architected a 4-service microservice ecosystem with OAuth2 SSO (Laravel Passport), BCS frontend (Inertia.js + React 19), versioned REST API (Swagger + PostgreSQL), and a public payment portal (Vue 3 + Vuetify 3).</li>
+          <li>Integrated three payment gateways — Dragonpay, AltPayNet, and Billeroo — into the NHA payment portal.</li>
+          <li>Delivered HRIS, Payroll, E-BPLS, Property Management, Resident ID, and Demand Notice systems for multiple LGUs.</li>
         </ul>
       </div>
     </div>
@@ -148,11 +280,11 @@
       <div class="section-title">Education</div>
       <div class="entry">
         <div class="entry-header">
-          <div>
-            <div class="entry-role">Bachelor of Science in Information Technology</div>
-            <div class="entry-org">Occidental Mindoro State University</div>
-          </div>
+          <div class="entry-role">Bachelor of Science in Information Technology</div>
           <div class="entry-period">2018 — 2022</div>
+        </div>
+        <div class="entry-sub">
+          <span class="entry-org">Occidental Mindoro State University</span>
         </div>
       </div>
     </div>
@@ -160,24 +292,50 @@
     <!-- SKILLS -->
     <div class="section">
       <div class="section-title">Technical Skills</div>
-      <div class="skills-grid">
-        <span class="skill-tag">PHP</span>
-        <span class="skill-tag">Laravel 8 / 12</span>
-        <span class="skill-tag">JavaScript</span>
-        <span class="skill-tag">Vue 2 / 3</span>
-        <span class="skill-tag">React 19</span>
-        <span class="skill-tag">Inertia.js</span>
-        <span class="skill-tag">MySQL</span>
-        <span class="skill-tag">PostgreSQL</span>
-        <span class="skill-tag">Bootstrap 5</span>
-        <span class="skill-tag">Tailwind CSS</span>
-        <span class="skill-tag">OAuth2 / SSO</span>
-        <span class="skill-tag">Laravel Passport</span>
-        <span class="skill-tag">Laravel Sanctum</span>
-        <span class="skill-tag">REST API Design</span>
-        <span class="skill-tag">Swagger / OpenAPI</span>
-        <span class="skill-tag">Vite</span>
-        <span class="skill-tag">Git</span>
+      <div class="skills-table">
+        <div class="skill-row">
+          <span class="skill-category">Backend</span>
+          <div class="skill-tags">
+            <span class="skill-tag">PHP</span>
+            <span class="skill-tag">Laravel 8 / 12</span>
+            <span class="skill-tag">REST API Design</span>
+          </div>
+        </div>
+        <div class="skill-row">
+          <span class="skill-category">Frontend</span>
+          <div class="skill-tags">
+            <span class="skill-tag">JavaScript</span>
+            <span class="skill-tag">Vue 2 / 3</span>
+            <span class="skill-tag">React 19</span>
+            <span class="skill-tag">Inertia.js</span>
+          </div>
+        </div>
+        <div class="skill-row">
+          <span class="skill-category">Database</span>
+          <div class="skill-tags">
+            <span class="skill-tag">MySQL</span>
+            <span class="skill-tag">PostgreSQL</span>
+          </div>
+        </div>
+        <div class="skill-row">
+          <span class="skill-category">Auth &amp; API</span>
+          <div class="skill-tags">
+            <span class="skill-tag">OAuth2 / SSO</span>
+            <span class="skill-tag">Laravel Passport</span>
+            <span class="skill-tag">Laravel Sanctum</span>
+            <span class="skill-tag">Swagger / OpenAPI</span>
+          </div>
+        </div>
+        <div class="skill-row">
+          <span class="skill-category">Tools &amp; UI</span>
+          <div class="skill-tags">
+            <span class="skill-tag">Bootstrap 5</span>
+            <span class="skill-tag">Tailwind CSS</span>
+            <span class="skill-tag">Vuetify 3</span>
+            <span class="skill-tag">Vite</span>
+            <span class="skill-tag">Git</span>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -186,33 +344,43 @@
       <div class="section-title">Key Projects</div>
 
       <div class="project">
-        <div class="project-name">LIBIS — NHA Billing &amp; Collection System</div>
-        <div class="project-meta">Laravel 12 · React 19 · Vue 3 · Inertia.js · OAuth2 · PostgreSQL · Swagger · Vuetify 3</div>
-        <div class="project-desc">4-service microservice ecosystem for NHA — central OAuth2 SSO portal, BCS frontend, versioned REST API with Swagger docs, and public payment portal supporting Dragonpay, AltPayNet, and Billeroo.</div>
+        <div class="project-header">
+          <span class="project-name">LIBIS — NHA Billing &amp; Collection System</span>
+          <span class="project-meta">Laravel 12 · React 19 · Vue 3 · Inertia.js · OAuth2 · PostgreSQL · Swagger · Vuetify 3</span>
+        </div>
+        <p class="project-desc">4-service microservice ecosystem for NHA — OAuth2 SSO portal, BCS frontend (Inertia.js + React 19), versioned REST API with Swagger docs, and a public payment portal (Vue 3 + Vuetify 3) supporting Dragonpay, AltPayNet, and Billeroo.</p>
       </div>
 
       <div class="project">
-        <div class="project-name">NHA Billing &amp; Collection System (nha-bcs-v2)</div>
-        <div class="project-meta">Laravel 8 · Vue 2 · MySQL · Bootstrap 5</div>
-        <div class="project-desc">Full financial management system for NHA Region 3 — official receipts, accountable forms, field collections, and analytics for government housing loans.</div>
+        <div class="project-header">
+          <span class="project-name">NHA Billing &amp; Collection System (v2)</span>
+          <span class="project-meta">Laravel 8 · Vue 2 · MySQL · Bootstrap 5</span>
+        </div>
+        <p class="project-desc">Full financial management system for NHA Region 3 — official receipts, accountable forms, field collections, and analytics for government housing loans.</p>
       </div>
 
       <div class="project">
-        <div class="project-name">Human Resource Information System</div>
-        <div class="project-meta">Laravel 8 · Vue 2 · MySQL · Bootstrap 5</div>
-        <div class="project-desc">Comprehensive HRIS managing employees, departments, positions, contracts, manpower requests, and work assignments.</div>
+        <div class="project-header">
+          <span class="project-name">Human Resource Information System</span>
+          <span class="project-meta">Laravel 8 · Vue 2 · MySQL · Bootstrap 5</span>
+        </div>
+        <p class="project-desc">Comprehensive HRIS managing employees, departments, positions, contracts, manpower requests, and work assignments.</p>
       </div>
 
       <div class="project">
-        <div class="project-name">E-Business Permit &amp; Licensing System (Bais City)</div>
-        <div class="project-meta">Laravel 8 · Vue 2 · MySQL · Bootstrap 5</div>
-        <div class="project-desc">LGU-facing system for new business applicants, BPLO processing, permit endorsement workflows, and email verification.</div>
+        <div class="project-header">
+          <span class="project-name">E-Business Permit &amp; Licensing System — Bais City</span>
+          <span class="project-meta">Laravel 8 · Vue 2 · MySQL · Bootstrap 5</span>
+        </div>
+        <p class="project-desc">LGU system handling new business applications, BPLO processing, permit endorsement workflows, and email verification.</p>
       </div>
 
       <div class="project">
-        <div class="project-name">Pagadian City Payroll System</div>
-        <div class="project-meta">Laravel 8 · Vue 2 · MySQL · Bootstrap 5</div>
-        <div class="project-desc">Payroll management system covering employee records, departments, job titles, and automated payroll register generation.</div>
+        <div class="project-header">
+          <span class="project-name">Pagadian City Payroll System</span>
+          <span class="project-meta">Laravel 8 · Vue 2 · MySQL · Bootstrap 5</span>
+        </div>
+        <p class="project-desc">Payroll management system covering employee records, departments, job titles, and automated payroll register generation.</p>
       </div>
     </div>
 
