@@ -17,13 +17,75 @@
       line-height: 1.55;
     }
 
+    /* ── TOOLBAR ── */
+    .toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: .7rem 1.5rem;
+      background: #0d1117;
+      border-bottom: 1px solid #1e293b;
+      gap: 1rem;
+    }
+    .toolbar-back {
+      display: inline-flex;
+      align-items: center;
+      gap: .45rem;
+      color: #94a3b8;
+      text-decoration: none;
+      font-size: .78rem;
+      font-weight: 500;
+      transition: color .2s;
+      flex-shrink: 0;
+    }
+    .toolbar-back:hover { color: #00c9a7; }
+    .toolbar-back svg { width: 14px; height: 14px; }
+    .toolbar-brand { font-size: .85rem; font-weight: 800; color: #fff; letter-spacing: -.015em; }
+    .toolbar-brand span { color: #00c9a7; }
+    .toolbar-sep { color: #334155; font-size: .7rem; margin: 0 .1rem; }
+    .toolbar-right {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .toolbar-tip { color: #475569; font-size: .7rem; font-style: italic; }
+    .btn-download {
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+      background: #00c9a7;
+      color: #0d1117;
+      border: none;
+      padding: .48rem 1.1rem;
+      border-radius: 6px;
+      font-weight: 700;
+      cursor: pointer;
+      font-size: .78rem;
+      font-family: 'Inter', sans-serif;
+      letter-spacing: .02em;
+      transition: opacity .2s, transform .15s;
+      white-space: nowrap;
+    }
+    .btn-download:hover { opacity: .87; transform: translateY(-1px); }
+    .btn-download svg { width: 13px; height: 13px; flex-shrink: 0; }
+
+    /* ── PAGE ── */
     .page {
+      position: relative;
       max-width: 800px;
       margin: 2rem auto;
       background: #fff;
       padding: 2.75rem 3rem;
-      box-shadow: 0 4px 24px rgba(0,0,0,.08);
-      border-radius: 4px;
+      box-shadow: 0 4px 32px rgba(0,0,0,.09);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+    .page::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, #00c9a7, #0096ff);
     }
 
     /* ── HEADER ── */
@@ -33,14 +95,6 @@
       margin-bottom: 1.75rem;
       border-bottom: 1px solid #e2e8f0;
     }
-    .header::after {
-      content: '';
-      position: absolute;
-      bottom: -1px; left: 0;
-      width: 56px; height: 2px;
-      background: linear-gradient(90deg, #00c9a7, #0096ff);
-      border-radius: 2px;
-    }
     .header h1 {
       font-size: 2rem;
       font-weight: 800;
@@ -48,13 +102,40 @@
       letter-spacing: -0.03em;
       line-height: 1;
     }
-    .header .title {
-      font-size: .875rem;
-      color: #00c9a7;
-      font-weight: 600;
-      margin-top: .35rem;
-      letter-spacing: .02em;
+    .header-subtitle {
+      display: flex;
+      align-items: center;
+      gap: .7rem;
+      flex-wrap: wrap;
+      margin-top: .4rem;
     }
+    .header-title {
+      font-size: .875rem;
+      color: #1e293b;
+      font-weight: 600;
+      letter-spacing: .01em;
+    }
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: .3rem;
+      font-size: .67rem;
+      font-weight: 600;
+      color: #475569;
+      background: #f8fafc;
+      border: 1px solid #cbd5e1;
+      padding: .18rem .62rem;
+      border-radius: 20px;
+    }
+    .status-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: #00c9a7;
+      flex-shrink: 0;
+      animation: blink 2s ease-in-out infinite;
+    }
+    @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+
     .contacts {
       display: flex;
       flex-wrap: wrap;
@@ -68,8 +149,9 @@
       font-size: .775rem;
       color: #475569;
       text-decoration: none;
+      transition: color .2s;
     }
-    .contacts a:hover { color: #00c9a7; }
+    .contacts a:hover { color: #0d1117; }
     .contacts svg { width: 12px; height: 12px; flex-shrink: 0; }
 
     /* ── SECTION ── */
@@ -85,14 +167,6 @@
       color: #64748b;
       margin-bottom: 1rem;
     }
-    .section-title::before {
-      content: '';
-      display: block;
-      width: 3px; height: 13px;
-      background: linear-gradient(180deg, #00c9a7, #0096ff);
-      border-radius: 2px;
-      flex-shrink: 0;
-    }
     .section-title::after {
       content: '';
       flex: 1;
@@ -102,7 +176,7 @@
 
     /* ── SUMMARY ── */
     .summary { color: #475569; line-height: 1.65; }
-    .summary strong { color: #1e293b; font-weight: 600; }
+    .summary strong { color: #0d1117; font-weight: 700; }
 
     /* ── EXPERIENCE / EDUCATION ── */
     .entry { margin-bottom: 1rem; }
@@ -117,8 +191,9 @@
     .entry-role { font-weight: 700; color: #0d1117; font-size: .875rem; }
     .entry-period {
       font-size: .7rem;
-      color: #fff;
-      background: linear-gradient(135deg, #00c9a7, #0096ff);
+      color: #475569;
+      background: #f1f5f9;
+      border: 1px solid #e2e8f0;
       padding: .18rem .6rem;
       border-radius: 20px;
       white-space: nowrap;
@@ -128,10 +203,9 @@
     .entry-sub {
       display: flex;
       align-items: center;
-      gap: 0;
       margin-bottom: .5rem;
     }
-    .entry-org { font-size: .8rem; color: #0096ff; font-weight: 600; }
+    .entry-org { font-size: .8rem; color: #0d1117; font-weight: 700; }
     .entry-location { font-size: .75rem; color: #94a3b8; }
     .entry-location::before { content: ' · '; }
 
@@ -139,81 +213,127 @@
     .entry ul li {
       position: relative;
       padding-left: 1.1rem;
-      margin-bottom: .28rem;
+      margin-bottom: .3rem;
       color: #475569;
-      line-height: 1.55;
+      line-height: 1.6;
     }
     .entry ul li::before {
       content: '▸';
       position: absolute;
       left: 0;
-      color: #00c9a7;
+      color: #94a3b8;
       font-size: .78em;
-      top: .08em;
+      top: .1em;
     }
 
     /* ── SKILLS ── */
-    .skills-table { display: flex; flex-direction: column; gap: .5rem; }
+    .skills-table { display: flex; flex-direction: column; gap: .55rem; }
     .skill-row { display: flex; align-items: flex-start; gap: .8rem; }
     .skill-category {
       font-size: .68rem;
       font-weight: 700;
-      color: #94a3b8;
+      color: #64748b;
       text-transform: uppercase;
       letter-spacing: .08em;
       min-width: 82px;
       padding-top: .22rem;
       flex-shrink: 0;
     }
-    .skill-tags { display: flex; flex-wrap: wrap; gap: .28rem; }
+    .skill-tags { display: flex; flex-wrap: wrap; gap: .3rem; }
     .skill-tag {
       font-size: .72rem;
-      padding: .18rem .62rem;
+      padding: .18rem .65rem;
       border-radius: 20px;
-      background: #f0fdf9;
-      color: #065f46;
-      border: 1px solid #a7f3d0;
-      font-weight: 500;
+      background: #f8fafc;
+      color: #1e293b;
+      border: 1px solid #e2e8f0;
+      font-weight: 600;
     }
 
     /* ── PROJECTS ── */
     .project {
       padding-left: .85rem;
-      margin-bottom: .8rem;
-      border-left: 2px solid #e2e8f0;
+      padding-top: .45rem;
+      padding-bottom: .45rem;
+      margin-bottom: .65rem;
     }
     .project:last-child { margin-bottom: 0; }
-    .project:hover { border-left-color: #00c9a7; }
-    .project-header {
-      display: flex;
-      align-items: baseline;
-      flex-wrap: wrap;
-      gap: .3rem .55rem;
-      margin-bottom: .15rem;
+
+    .project-name {
+      font-weight: 700;
+      color: #0d1117;
+      font-size: .845rem;
+      margin-bottom: .12rem;
     }
-    .project-name { font-weight: 700; color: #0d1117; font-size: .845rem; }
-    .project-meta { font-size: .7rem; color: #0096ff; font-weight: 500; }
-    .project-desc { color: #475569; line-height: 1.55; }
+    .featured-label {
+      display: inline-block;
+      font-size: .6rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .07em;
+      color: #475569;
+      background: #f1f5f9;
+      border: 1px solid #cbd5e1;
+      padding: .06rem .42rem;
+      border-radius: 20px;
+      vertical-align: middle;
+      margin-left: .35rem;
+      position: relative;
+      top: -.05em;
+    }
+    .project-meta {
+      font-size: .72rem;
+      color: #475569;
+      font-weight: 600;
+      margin-bottom: .18rem;
+    }
+    .project-desc {
+      color: #64748b;
+      line-height: 1.58;
+      font-size: .8rem;
+    }
 
     /* ── PRINT ── */
     @media print {
-      @page { margin: 1.4cm 1.8cm; size: A4; }
-      body { background: #fff; font-size: 11.5px; }
-      .page { margin: 0; padding: 0; box-shadow: none; border-radius: 0; max-width: 100%; }
+      @page { margin: 1.2cm 1.2cm; size: A4; }
+      html, body { margin: 0; padding: 0; width: 100%; background: #fff; font-size: 11.5px; }
       .no-print { display: none !important; }
-      .project:hover { border-left-color: #e2e8f0; }
+      .status-badge { display: none !important; }
+      .page {
+        margin: 0;
+        padding: 0;
+        box-shadow: none;
+        border-radius: 0;
+        max-width: none;
+        width: 100%;
+      }
+      .page::before { display: none; }
+      .status-dot { animation: none; }
+      .btn-download:hover { transform: none; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Print toolbar -->
-  <div class="no-print" style="display:flex;align-items:center;justify-content:center;gap:.8rem;padding:.9rem 1rem;background:#0d1117;">
-    <button onclick="window.print()"
-      style="background:#00c9a7;color:#0d1117;border:none;padding:.55rem 1.4rem;border-radius:6px;font-weight:700;cursor:pointer;font-size:.8rem;font-family:'Inter',sans-serif;letter-spacing:.02em;">
-      ⬇ Download / Print as PDF
-    </button>
-    <span style="color:#475569;font-size:.72rem;font-family:'Inter',sans-serif;">Set page margins to <em>None</em> in the print dialog for best output</span>
+  <!-- Toolbar -->
+  <div class="toolbar no-print">
+    <a href="/" class="toolbar-back">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M19 12H5M12 5l-7 7 7 7"/>
+      </svg>
+      <span class="toolbar-brand">HD<span>.</span></span>
+      <span class="toolbar-sep">/</span>
+      <span style="color:#64748b;font-size:.73rem;">Resume</span>
+    </a>
+    <div class="toolbar-right">
+      <span class="toolbar-tip">Set page margins to <em>None</em> in print dialog</span>
+      <button class="btn-download" onclick="window.print()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+        </svg>
+        Download PDF
+      </button>
+    </div>
   </div>
 
   <div class="page">
@@ -221,7 +341,13 @@
     <!-- HEADER -->
     <div class="header">
       <h1>Homer Divinagracia</h1>
-      <div class="title">Jr. Full Stack Developer &nbsp;·&nbsp; Aspiring Agentic Engineer</div>
+      <div class="header-subtitle">
+        <span class="header-title">Jr. Full Stack Developer &nbsp;·&nbsp; Aspiring Agentic Engineer</span>
+        <span class="status-badge">
+          <span class="status-dot"></span>
+          Open to Opportunities
+        </span>
+      </div>
       <div class="contacts">
         <a href="mailto:homerdivinagracia@gmail.com">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 7 10-7"/></svg>
@@ -249,7 +375,7 @@
         Junior Full Stack Developer with hands-on experience delivering production-grade web applications
         for Philippine government agencies — including the National Housing Authority (NHA) and multiple LGUs.
         Proficient in <strong>PHP / Laravel</strong> on the backend and <strong>Vue.js / React</strong> on the frontend.
-        Experienced with microservice architecture, OAuth2 SSO, REST API design, and MySQL / PostgreSQL.
+        Experienced with <strong>microservice architecture</strong>, <strong>OAuth2 SSO</strong>, REST API design, and MySQL / PostgreSQL.
         Passionate about agentic engineering and building smarter, more autonomous systems.
       </p>
     </div>
@@ -267,9 +393,9 @@
           <span class="entry-location">Makati City</span>
         </div>
         <ul>
-          <li>Built 7+ production web applications for government agencies (NHA, LGUs) across the Philippines.</li>
-          <li>Architected a 4-service microservice ecosystem with OAuth2 SSO (Laravel Passport), BCS frontend (Inertia.js + React 19), versioned REST API (Swagger + PostgreSQL), and a public payment portal (Vue 3 + Vuetify 3).</li>
-          <li>Integrated three payment gateways — Dragonpay, AltPayNet, and Billeroo — into the NHA payment portal.</li>
+          <li>Built <strong>7+ production web applications</strong> for government agencies (NHA, LGUs) across the Philippines.</li>
+          <li>Architected a <strong>4-service microservice ecosystem</strong> with OAuth2 SSO (Laravel Passport), BCS frontend (Inertia.js + React 19), versioned REST API (Swagger + PostgreSQL), and a public payment portal (Vue 3 + Vuetify 3).</li>
+          <li>Integrated three payment gateways — <strong>Dragonpay, AltPayNet, and Billeroo</strong> — into the NHA payment portal.</li>
           <li>Delivered HRIS, Payroll, E-BPLS, Property Management, Resident ID, and Demand Notice systems for multiple LGUs.</li>
         </ul>
       </div>
@@ -343,45 +469,39 @@
     <div class="section">
       <div class="section-title">Key Projects</div>
 
-      <div class="project">
-        <div class="project-header">
-          <span class="project-name">LIBIS — NHA Billing &amp; Collection System</span>
-          <span class="project-meta">Laravel 12 · React 19 · Vue 3 · Inertia.js · OAuth2 · PostgreSQL · Swagger · Vuetify 3</span>
+      <div class="project project-featured">
+        <div class="project-name">
+          LIBIS — NHA Billing &amp; Collection System
+          <span class="featured-label">Featured</span>
         </div>
+        <div class="project-meta">Laravel 12 · React 19 · Vue 3 · Inertia.js · OAuth2 · PostgreSQL · Swagger · Vuetify 3</div>
         <p class="project-desc">4-service microservice ecosystem for NHA — OAuth2 SSO portal, BCS frontend (Inertia.js + React 19), versioned REST API with Swagger docs, and a public payment portal (Vue 3 + Vuetify 3) supporting Dragonpay, AltPayNet, and Billeroo.</p>
       </div>
 
       <div class="project">
-        <div class="project-header">
-          <span class="project-name">NHA Billing &amp; Collection System (v2)</span>
-          <span class="project-meta">Laravel 8 · Vue 2 · MySQL · Bootstrap 5</span>
-        </div>
+        <div class="project-name">NHA Billing &amp; Collection System (v2)</div>
+        <div class="project-meta">Laravel 8 · Vue 2 · MySQL · Bootstrap 5</div>
         <p class="project-desc">Full financial management system for NHA Region 3 — official receipts, accountable forms, field collections, and analytics for government housing loans.</p>
       </div>
 
       <div class="project">
-        <div class="project-header">
-          <span class="project-name">Human Resource Information System</span>
-          <span class="project-meta">Laravel 8 · Vue 2 · MySQL · Bootstrap 5</span>
-        </div>
+        <div class="project-name">Human Resource Information System</div>
+        <div class="project-meta">Laravel 8 · Vue 2 · MySQL · Bootstrap 5</div>
         <p class="project-desc">Comprehensive HRIS managing employees, departments, positions, contracts, manpower requests, and work assignments.</p>
       </div>
 
       <div class="project">
-        <div class="project-header">
-          <span class="project-name">E-Business Permit &amp; Licensing System — Bais City</span>
-          <span class="project-meta">Laravel 8 · Vue 2 · MySQL · Bootstrap 5</span>
-        </div>
+        <div class="project-name">E-Business Permit &amp; Licensing System — Bais City</div>
+        <div class="project-meta">Laravel 8 · Vue 2 · MySQL · Bootstrap 5</div>
         <p class="project-desc">LGU system handling new business applications, BPLO processing, permit endorsement workflows, and email verification.</p>
       </div>
 
       <div class="project">
-        <div class="project-header">
-          <span class="project-name">Pagadian City Payroll System</span>
-          <span class="project-meta">Laravel 8 · Vue 2 · MySQL · Bootstrap 5</span>
-        </div>
+        <div class="project-name">Pagadian City Payroll System</div>
+        <div class="project-meta">Laravel 8 · Vue 2 · MySQL · Bootstrap 5</div>
         <p class="project-desc">Payroll management system covering employee records, departments, job titles, and automated payroll register generation.</p>
       </div>
+
     </div>
 
   </div>
