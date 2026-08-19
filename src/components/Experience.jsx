@@ -4,7 +4,7 @@ const experience = {
   role: 'Jr. Software Developer / Full Stack Developer',
   period: 'August 2024 — Present',
   highlights: [
-    'Built 7+ production web applications for government agencies including NHA and multiple LGUs across the Philippines.',
+    'Built 7+ production web applications for national government agencies and multiple LGUs across the Philippines.',
     'Developed a 4-service microservice ecosystem with OAuth2 SSO, versioned REST API, BCS frontend, and a public payment portal.',
     'Integrated multiple payment gateways: Dragonpay, AltPayNet, and Billeroo.',
     'Worked across the full stack with Laravel 8/12, Vue 2/3, React 19, Inertia.js, MySQL, and PostgreSQL.',
