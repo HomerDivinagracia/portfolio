@@ -1,14 +1,14 @@
 const projects = [
   {
-    name: 'LIBIS — NHA Billing & Collection System',
-    desc: 'A 4-service ecosystem for the National Housing Authority built on a microservice architecture. Includes a central OAuth2 SSO portal, a BCS frontend (Inertia.js), a versioned REST API (PostgreSQL + Swagger), and a public online payment portal (Vue 3 + Vuetify) supporting Dragonpay, AltPayNet, and Billeroo — all sharing the same BCS database.',
+    name: 'LIBIS — Billing & Collection System',
+    desc: 'A 4-service ecosystem for a national government housing agency built on a microservice architecture. Includes a central OAuth2 SSO portal, a BCS frontend (Inertia.js), a versioned REST API (PostgreSQL + Swagger), and a public online payment portal (Vue 3 + Vuetify) supporting Dragonpay, AltPayNet, and Billeroo — all sharing the same BCS database.',
     tags: ['Laravel 12', 'React 19', 'Vue 3', 'Inertia.js', 'OAuth2 / SSO', 'PostgreSQL', 'Swagger', 'Vuetify 3'],
     icon: '🏗️',
     featured: true,
   },
   {
-    name: 'NHA Billing & Collection System',
-    desc: 'Full financial management system for the National Housing Authority Region 3 — handles official receipts, accountable forms, field collections, and analytics for government housing loans.',
+    name: 'Government Housing Billing & Collection System',
+    desc: 'Full financial management system for a government housing agency — handles official receipts, accountable forms, field collections, and analytics for government housing loans.',
     tags: ['Laravel 8', 'Vue 2', 'MySQL', 'Bootstrap 5'],
     icon: '🏦',
   },
@@ -20,7 +20,7 @@ const projects = [
   },
   {
     name: 'E-Business Permit & Licensing System',
-    desc: 'LGU-facing system for Bais City that handles new business applicants, BPLO processing, permit endorsement workflows, and email verification.',
+    desc: 'LGU-facing system that handles new business applicants, BPLO processing, permit endorsement workflows, and email verification.',
     tags: ['Laravel 8', 'Vue 2', 'MySQL', 'Bootstrap 5'],
     icon: '🏢',
   },
@@ -32,13 +32,13 @@ const projects = [
   },
   {
     name: 'Resident ID & Household Registration System',
-    desc: 'Civic system for San Jose del Barrio that handles household and resident registration, ID card generation, and a daily/monthly transaction dashboard.',
+    desc: 'Civic system that handles household and resident registration, ID card generation, and a daily/monthly transaction dashboard for an LGU.',
     tags: ['Laravel 8', 'Vue 2', 'MySQL', 'Bootstrap 5'],
     icon: '🪪',
   },
   {
-    name: 'Pagadian City Payroll System',
-    desc: 'Payroll management system for Pagadian City covering employee records, departments, job titles, and automated payroll register generation.',
+    name: 'Government Payroll System',
+    desc: 'Payroll management system covering employee records, departments, job titles, and automated payroll register generation for a local government unit.',
     tags: ['Laravel 8', 'Vue 2', 'MySQL', 'Bootstrap 5'],
     icon: '💼',
   },

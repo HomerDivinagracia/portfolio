@@ -1,6 +1,6 @@
 const stats = [
   { value: '7+', label: 'Projects Delivered' },
-  { value: 'Gov\'t', label: 'Clients (NHA, LGU)' },
+  { value: 'Gov\'t', label: 'Clients (Agency, LGU)' },
   { value: 'PHP', label: 'Backend' },
   { value: 'Vue', label: 'Frontend' },
 ]
@@ -16,7 +16,7 @@ export default function About() {
         <div className="space-y-4 text-slate-400 leading-relaxed">
           <p>
             I'm a Junior Full Stack Developer with hands-on experience building production-grade
-            web applications for government agencies — including the National Housing Authority (NHA)
+            web applications for government agencies — including a national housing authority
             and multiple Local Government Units (LGUs) across the Philippines.
           </p>
           <p>
